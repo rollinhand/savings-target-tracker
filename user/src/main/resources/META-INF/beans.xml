@@ -18,10 +18,10 @@
        bean-discovery-mode="all">
     <jaxrs:server address="/">
         <jaxrs:serviceBeans>
-            <ref bean="org.kivio.sst.user.adapter.http.UserResource" />
+            <ref bean="org.kivio.stt.user.adapter.http.UserResource" />
         </jaxrs:serviceBeans>
         <jaxrs:providers>
-            <bean class="org.kivio.sst.user.adapter.http.impl.UserNotFoundExceptionMapper" />
+            <bean class="org.kivio.stt.user.adapter.http.impl.UserNotFoundExceptionMapper" />
         </jaxrs:providers>
     </jaxrs:server>
 </beans>

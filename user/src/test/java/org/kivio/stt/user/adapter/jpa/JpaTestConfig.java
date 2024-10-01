@@ -17,7 +17,7 @@ public class JpaTestConfig {
                 .setDataSource(ds)
                 .setExcludeUnlistedClasses(true)
                 .addManagedClazz(User.class)
-                .addProperty("openjpa.RuntimeUnenhancedClasses", "supported")
+                .addProperty("openjpa.RuntimeUnenhancedClasses", "warn")
                 .addProperty("openjpa.Log", "DefaultLevel=INFO, SQL=TRACE")
                 // Dieses Property sorgt dafür, dass OpenJPA beim Start automatisch die Tabellen basierend auf den Entitäten erzeugt.
                 // Der Wert buildSchema(ForeignKeys=true) bedeutet, dass auch Fremdschlüssel berücksichtigt werden.
