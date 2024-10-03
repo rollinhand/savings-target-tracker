@@ -20,6 +20,9 @@ import java.net.URISyntaxException;
 @Consumes(MediaType.APPLICATION_JSON)
 public interface UserResource {
     @GET
+    Response getAllUsers();
+
+    @GET
     @Path("/{userId}")
     Response getUser(@PathParam("userId") String userId);
 

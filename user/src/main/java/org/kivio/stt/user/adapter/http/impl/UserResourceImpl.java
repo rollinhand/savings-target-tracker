@@ -28,6 +28,11 @@ public class UserResourceImpl implements UserResource {
     }
 
     @Override
+    public Response getAllUsers() {
+        return Response.ok(userRepository.findAll()).build();
+    }
+
+    @Override
     public Response getUser(String userId) {
         return Response.ok(
                 this.userRepository.findById(userId)

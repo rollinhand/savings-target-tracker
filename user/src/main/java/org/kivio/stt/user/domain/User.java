@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -17,6 +18,7 @@ import java.util.Objects;
 @Data
 @NoArgsConstructor
 @Table(name = "stt_users")
+@NamedQuery(name = "User.findAll", query = "select u from User u")
 @JsonbPropertyOrder({
         "id", "firstname", "lastname", "birthdate", "email"
 })

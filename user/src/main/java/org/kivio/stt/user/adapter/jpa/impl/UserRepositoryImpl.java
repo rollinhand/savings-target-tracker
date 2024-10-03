@@ -10,6 +10,7 @@ import org.kivio.stt.user.domain.User;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import java.util.List;
 import java.util.Optional;
 
 @Jpa
@@ -43,5 +44,10 @@ public class UserRepositoryImpl implements UserRepository {
     @Jpa(transactional = false)
     public Optional<User> findById(final String id) {
         return Optional.ofNullable(em.find(User.class, id));
+    }
+
+    @Override
+    public List<User> findAll() {
+        return em.createNamedQuery("User.findAll", User.class).getResultList();
     }
 }
