@@ -4,11 +4,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.json.bind.annotation.JsonbTransient;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import java.io.Serializable;
@@ -26,6 +28,7 @@ public class Transaction implements Serializable {
     private String id;
     @ManyToOne(fetch = FetchType.EAGER)
     @JsonbTransient
+    @JoinColumn(name = "savings_target_id", nullable = false)
     private SavingsTarget savingsTarget;
     private BigDecimal amount;
     private LocalDate date;

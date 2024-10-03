@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 
 import javax.json.bind.annotation.JsonbPropertyOrder;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -36,10 +37,14 @@ public class SavingsTarget implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "uuid-hex")
     private String id;
+    @Column(name = "user_id")
     private String userId;
     private String name;
+    @Column(name = "target_amount")
     private BigDecimal targetAmount;
+    @Column(name = "target_date")
     private LocalDate targetDate;
+    @Column(name = "monthly_savings")
     private BigDecimal monthlySavings;
     @OneToMany(
             mappedBy = "savingsTarget",
