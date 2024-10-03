@@ -1,0 +1,24 @@
+# List all available users
+GET http://localhost:8080/users
+
+###
+
+POST http://localhost:8080/users
+Content-Type: */*
+
+{
+"firstname": "Klaus",
+"lastname": "Kinski",
+"email": "klaus.kinski@springfield.us"
+}
+
+###
+
+# List information for user Homer Simpson (from our testdata)
+GET http://localhost:8080/users/c54e6bfc-9f1f-4d02-ae74-798dbba75a71
+Content-Type: */*
+
+###
+
+# List all savings for user Homer Simpson
+GET http://localhost:8080/savings/findByUser/c54e6bfc-9f1f-4d02-ae74-798dbba75a71
